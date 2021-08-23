@@ -30,9 +30,56 @@ if (doParticles) {
 }
 
 // This is for the click to copy
-let t;
-$(document).ready(() => {
-    t = $(".ip").html();
+
+$(document).on("click", ".java-ip", () => {
+    let t = $(".java-ip").html();
+    let copy = document.createElement("textarea");
+    copy.style.position = "absolute";
+    copy.style.left = "-99999px";
+    copy.style.top = "0";
+    copy.setAttribute("id", "ta");
+    document.body.appendChild(copy);
+    copy.textContent = t;
+    copy.select();
+    document.execCommand("copy");
+    $(".java-ip").html("COPIED!");
+    setTimeout(() => {
+        $(".java-ip").html(t);
+    }, 500)
+});
+
+$(document).on("click", ".bedrock-ip", () => {
+    let t = $(".bedrock-ip").html();
+    let copy = document.createElement("textarea");
+    copy.style.position = "absolute";
+    copy.style.left = "-99999px";
+    copy.style.top = "0";
+    copy.setAttribute("id", "ta");
+    document.body.appendChild(copy);
+    copy.textContent = t;
+    copy.select();
+    document.execCommand("copy");
+    $(".bedrock-ip").html("COPIED!");
+    setTimeout(() => {
+        $(".bedrock-ip").html(t);
+    }, 500)
+});
+
+$(document).on("click", ".bedrock-port", () => {
+    let t = $(".bedrock-port").html();
+    let copy = document.createElement("textarea");
+    copy.style.position = "absolute";
+    copy.style.left = "-99999px";
+    copy.style.top = "0";
+    copy.setAttribute("id", "ta");
+    document.body.appendChild(copy);
+    copy.textContent = t;
+    copy.select();
+    document.execCommand("copy");
+    $(".bedrock-port").html("COPIED!");
+    setTimeout(() => {
+        $(".bedrock-port").html(t);
+    }, 500)
 });
 
 // This is to fetch the player count
